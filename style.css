@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+  --prim-color: coral;
+  --sec-color: chocolate;
+  --text-color: #333;
+  --hover-color: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* Navbar */
+#navbar {
+  background: #f4f4f4;
+}
+
+#navbar ul {
+  list-style: none;
+}
+
+/* #navbar ul {
+  display: flex;
+} */
+
+#navbar ul li {
+  display: inline-block;
+  padding: 1rem;
+  /* So that we can position the nested menu items */
+  position: relative;
+}
+
+/* Make none a tags look like a link */
+#navbar ul li:hover {
+  cursor: pointer;
+  color: var(--hover-color);
+  background: var(--prim-color);
+}
+
+#navbar ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#navbar ul li a:hover {
+  color: var(--hover-color);
+}
+
+/* Hide nsted ul by default */
+#navbar ul li ul {
+  display: none;
+}
+
+/* Show nested Drop down menus */
+#navbar ul li:hover ul {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 200px;
+  margin-top: 1rem;;
+}
+
+/* Give the nested li a slightly darker grey background
+make block to fill the 200px width parent */
+#navbar ul li:hover ul li {
+  display: block;
+  background: #e7e7e7;
+}
+
+/* Change link color to coral on hover (for nested menu items only) */
+#navbar ul li:hover ul li:hover a {
+  color: var(--prim-color);
+}
+
+/* Nested spans */
+#navbar ul li:hover ul li span {
+  float: right;
+  background: var(--prim-color);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  text-align: center;
+}
+
+#navbar ul li:hover ul li:hover span {
+  background: var(--sec-color);
+}
+
+/* Showcase */
+
+#showcase {
+  height: 50vh;
+  background: var(--prim-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+#showcase h1 {
+  color: #fff;
+  font-size: 3.5rem;
+}
+
+/* Media Queries ----------- */
+
+/* Smartphones */
+@media (max-width: 600px) {
+
+  /* position main menu items vertically  */
+  #navbar ul li {
+    display: block;
+  }
+
+  /* Make nested menus 100% width and reposition */
+  #navbar ul li:hover ul {
+    width: 100%;
+    position: relative;
+  }
+
+}
